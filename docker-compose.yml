@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  compression_benchmark:
+    build:
+      context: .
+      dockerfile: src/Dockerfile
+    volumes:
+      - ./src/datasets:/app/datasets
+      - ./src/methods:/app/methods
+      - ./src/results:/app/results
+      - ./src/scripts:/app/scripts
+      - ./src/util:/app/util
+      - ./run_benchmark.py:/app/run_benchmark.py
+    working_dir: /app
+    command: [ "python", "run_benchmark.py" ]
