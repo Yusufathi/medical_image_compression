@@ -1,2 +1,2 @@
-# medical_image_comprision
+# medical_image_compression
  
